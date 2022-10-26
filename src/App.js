@@ -117,6 +117,7 @@ class App extends React.Component {
       cardTrunfo,
       hasTrunfo,
       isSaveButtonDisabled,
+      cardsCreated,
     } = this.state;
     return (
       <div>
@@ -147,6 +148,35 @@ class App extends React.Component {
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
         />
+
+        <div>
+          <ul>
+            { cardsCreated.map((card) => {
+              const {
+                cardName: name,
+                cardDescription: description,
+                cardAttr1: attr1,
+                cardAttr2: attr2,
+                cardAttr3: attr3,
+                cardImage: image,
+                cardRare: rare,
+                cardTrunfo: trunfo,
+              } = card;
+
+              return (<Card
+                key={ name }
+                cardName={ name }
+                cardDescription={ description }
+                cardAttr1={ attr1 }
+                cardAttr2={ attr2 }
+                cardAttr3={ attr3 }
+                cardImage={ image }
+                cardRare={ rare }
+                cardTrunfo={ trunfo }
+              />);
+            }) }
+          </ul>
+        </div>
       </div>
     );
   }
