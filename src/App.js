@@ -16,7 +16,7 @@ class App extends React.Component {
       cardRare: '',
       cardTrunfo: false,
       hasTrunfo: false,
-      isSaveButtonDisabled: false,
+      isSaveButtonDisabled: true,
     };
 
     this.onInputChange = this.onInputChange.bind(this);
@@ -27,13 +27,45 @@ class App extends React.Component {
     const { name } = target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     console.log(target);
-    this.setState({
-      [name]: value,
+    this.setState({ [name]: value }, () => {
+      const {
+        cardName,
+        cardDescription,
+        cardAttr1,
+        cardAttr2,
+        cardAttr3,
+        cardImage,
+        cardRare,
+      } = this.state;
+
+      const one = parseInt(cardAttr1, 10);
+      const two = parseInt(cardAttr2, 10);
+      const three = parseInt(cardAttr3, 10);
+      const sum = one + two + three;
+      const number = 210;
+      const number2 = 90;
+
+      const first = (
+        cardName === '' || cardDescription === '' || cardImage === '' || cardRare === '');
+      const second = sum > number;
+      const third = (
+        cardAttr1 < 0
+        || cardAttr1 > number2
+        || cardAttr2 < 0
+        || cardAttr2 > number2
+        || cardAttr3 < 0
+        || cardAttr3 > number2
+      );
+      const newBtnState = first || second || third;
+
+      this.setState({
+        isSaveButtonDisabled: newBtnState,
+      });
     });
   }
 
   onSaveButtonClick() {
-    return 'asd';
+    console.log('asd');
   }
 
   render() {
