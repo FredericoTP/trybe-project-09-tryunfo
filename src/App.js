@@ -73,6 +73,7 @@ class App extends React.Component {
       cardAttr3,
       cardImage,
       cardRare,
+      cardTrunfo,
     } = this.state;
 
     const card = {
@@ -83,6 +84,7 @@ class App extends React.Component {
       cardAttr3,
       cardImage,
       cardRare,
+      cardTrunfo,
     };
 
     event.preventDefault();
@@ -97,7 +99,10 @@ class App extends React.Component {
       cardAttr3: '0',
       cardRare: 'normal',
     }));
-    // console.log(this.state);
+
+    if (cardTrunfo) {
+      this.setState({ hasTrunfo: true });
+    }
   }
 
   render() {
