@@ -9,14 +9,15 @@ class App extends React.Component {
     this.state = {
       cardName: '',
       cardDescription: '',
-      cardAttr1: '',
-      cardAttr2: '',
-      cardAttr3: '',
+      cardAttr1: '0',
+      cardAttr2: '0',
+      cardAttr3: '0',
       cardImage: '',
-      cardRare: '',
+      cardRare: 'normal',
       cardTrunfo: false,
       hasTrunfo: false,
       isSaveButtonDisabled: true,
+      cardsCreated: [],
     };
 
     this.onInputChange = this.onInputChange.bind(this);
@@ -26,7 +27,6 @@ class App extends React.Component {
   onInputChange({ target }) {
     const { name } = target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
-    console.log(target);
     this.setState({ [name]: value }, () => {
       const {
         cardName,
@@ -64,8 +64,40 @@ class App extends React.Component {
     });
   }
 
-  onSaveButtonClick() {
-    console.log('asd');
+  onSaveButtonClick(event) {
+    const {
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare,
+    } = this.state;
+
+    const card = {
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare,
+    };
+
+    event.preventDefault();
+
+    this.setState((prevState) => ({
+      cardsCreated: [...prevState.cardsCreated, card],
+      cardName: '',
+      cardDescription: '',
+      cardImage: '',
+      cardAttr1: '0',
+      cardAttr2: '0',
+      cardAttr3: '0',
+      cardRare: 'normal',
+    }));
+    // console.log(this.state);
   }
 
   render() {
