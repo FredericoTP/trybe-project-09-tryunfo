@@ -23,8 +23,13 @@ class App extends React.Component {
     this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
   }
 
-  onInputChange() {
-    return 'asd';
+  onInputChange({ target }) {
+    const { name } = target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    console.log(target);
+    this.setState({
+      [name]: value,
+    });
   }
 
   onSaveButtonClick() {
