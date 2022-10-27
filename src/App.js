@@ -22,6 +22,9 @@ class App extends React.Component {
       cardsCreated: [],
       filterName: '',
       filterRare: 'todas',
+      filterTrunfo: false,
+      isFilterNameDisabled: false,
+      isFilterRareDisabled: false,
     };
 
     this.onInputChange = this.onInputChange.bind(this);
@@ -41,6 +44,7 @@ class App extends React.Component {
         cardAttr3,
         cardImage,
         cardRare,
+        filterTrunfo,
       } = this.state;
 
       const one = parseInt(cardAttr1, 10);
@@ -62,9 +66,11 @@ class App extends React.Component {
         || cardAttr3 > number2
       );
       const newBtnState = first || second || third;
-
+      const filter = filterTrunfo;
       this.setState({
         isSaveButtonDisabled: newBtnState,
+        isFilterNameDisabled: filter,
+        isFilterRareDisabled: filter,
       });
     });
   }
@@ -142,6 +148,9 @@ class App extends React.Component {
       cardsCreated,
       filterName,
       filterRare,
+      filterTrunfo,
+      isFilterNameDisabled,
+      isFilterRareDisabled,
     } = this.state;
     return (
       <div>
@@ -178,6 +187,9 @@ class App extends React.Component {
           <Filters
             filterName={ filterName }
             filterRare={ filterRare }
+            filterTrunfo={ filterTrunfo }
+            isFilterNameDisabled={ isFilterNameDisabled }
+            isFilterRareDisabled={ isFilterRareDisabled }
             onInputChange={ this.onInputChange }
           />
 
@@ -186,6 +198,7 @@ class App extends React.Component {
             deleteCard={ this.deleteCard }
             filterName={ filterName }
             filterRare={ filterRare }
+            filterTrunfo={ filterTrunfo }
           />
         </div>
       </div>

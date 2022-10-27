@@ -9,6 +9,7 @@ class CardList extends React.Component {
       deleteCard,
       filterName,
       filterRare,
+      filterTrunfo,
     } = this.props;
     return (
       <div>
@@ -25,7 +26,7 @@ class CardList extends React.Component {
               cardTrunfo: trunfo,
             } = card;
 
-            if (filterName === '' && filterRare === 'todas') {
+            if (filterTrunfo && trunfo) {
               return (
                 <li key={ `${name}-${index}` }>
                   <Card
@@ -51,7 +52,33 @@ class CardList extends React.Component {
               );
             }
 
-            if (filterName === '' && rare === filterRare) {
+            if (filterName === '' && filterRare === 'todas' && !filterTrunfo) {
+              return (
+                <li key={ `${name}-${index}` }>
+                  <Card
+                    key={ name }
+                    cardName={ name }
+                    cardDescription={ description }
+                    cardAttr1={ attr1 }
+                    cardAttr2={ attr2 }
+                    cardAttr3={ attr3 }
+                    cardImage={ image }
+                    cardRare={ rare }
+                    cardTrunfo={ trunfo }
+                  />
+                  <button
+                    name={ index }
+                    data-testid="delete-button"
+                    type="button"
+                    onClick={ deleteCard }
+                  >
+                    Excluir
+                  </button>
+                </li>
+              );
+            }
+
+            if (filterName === '' && rare === filterRare && !filterTrunfo) {
               return (
                 <li key={ `${name}-${index}` }>
                   <Card
@@ -155,6 +182,7 @@ CardList.propTypes = {
   deleteCard: PropTypes.func.isRequired,
   filterName: PropTypes.string.isRequired,
   filterRare: PropTypes.string.isRequired,
+  filterTrunfo: PropTypes.bool.isRequired,
 };
 
 export default CardList;
