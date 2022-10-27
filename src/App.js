@@ -1,6 +1,8 @@
 import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
+import Filters from './components/Filters';
+import CardList from './components/CardList';
 
 class App extends React.Component {
   constructor() {
@@ -18,6 +20,7 @@ class App extends React.Component {
       hasTrunfo: false,
       isSaveButtonDisabled: true,
       cardsCreated: [],
+      filterName: '',
     };
 
     this.onInputChange = this.onInputChange.bind(this);
@@ -136,6 +139,7 @@ class App extends React.Component {
       hasTrunfo,
       isSaveButtonDisabled,
       cardsCreated,
+      filterName,
     } = this.state;
     return (
       <div>
@@ -166,46 +170,19 @@ class App extends React.Component {
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
         />
-
         <div>
-          <ul>
-            { cardsCreated.map((card, index) => {
-              const {
-                cardName: name,
-                cardDescription: description,
-                cardAttr1: attr1,
-                cardAttr2: attr2,
-                cardAttr3: attr3,
-                cardImage: image,
-                cardRare: rare,
-                cardTrunfo: trunfo,
-              } = card;
+          <h2>TODAS AS CARTAS</h2>
 
-              return (
-                <li key={ `${cardName}-${index}` }>
-                  <Card
-                    key={ name }
-                    cardName={ name }
-                    cardDescription={ description }
-                    cardAttr1={ attr1 }
-                    cardAttr2={ attr2 }
-                    cardAttr3={ attr3 }
-                    cardImage={ image }
-                    cardRare={ rare }
-                    cardTrunfo={ trunfo }
-                  />
-                  <button
-                    name={ index }
-                    data-testid="delete-button"
-                    type="button"
-                    onClick={ this.deleteCard }
-                  >
-                    Excluir
-                  </button>
-                </li>
-              );
-            }) }
-          </ul>
+          <Filters
+            filterName={ filterName }
+            onInputChange={ this.onInputChange }
+          />
+
+          <CardList
+            cardsCreated={ cardsCreated }
+            deleteCard={ this.deleteCard }
+            filterName={ filterName }
+          />
         </div>
       </div>
     );
