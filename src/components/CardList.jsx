@@ -8,6 +8,7 @@ class CardList extends React.Component {
       cardsCreated,
       deleteCard,
       filterName,
+      filterRare,
     } = this.props;
     return (
       <div>
@@ -24,7 +25,7 @@ class CardList extends React.Component {
               cardTrunfo: trunfo,
             } = card;
 
-            if (filterName === '') {
+            if (filterName === '' && filterRare === 'todas') {
               return (
                 <li key={ `${name}-${index}` }>
                   <Card
@@ -50,7 +51,7 @@ class CardList extends React.Component {
               );
             }
 
-            if (filterName !== '' && name.includes(filterName)) {
+            if (filterName === '' && rare === filterRare) {
               return (
                 <li key={ `${name}-${index}` }>
                   <Card
@@ -76,9 +77,63 @@ class CardList extends React.Component {
               );
             }
 
-            return (
-              ''
-            );
+            if (filterName !== ''
+              && name.includes(filterName)
+              && filterRare === 'todas') {
+              return (
+                <li key={ `${name}-${index}` }>
+                  <Card
+                    key={ name }
+                    cardName={ name }
+                    cardDescription={ description }
+                    cardAttr1={ attr1 }
+                    cardAttr2={ attr2 }
+                    cardAttr3={ attr3 }
+                    cardImage={ image }
+                    cardRare={ rare }
+                    cardTrunfo={ trunfo }
+                  />
+                  <button
+                    name={ index }
+                    data-testid="delete-button"
+                    type="button"
+                    onClick={ deleteCard }
+                  >
+                    Excluir
+                  </button>
+                </li>
+              );
+            }
+
+            if (filterName !== ''
+              && name.includes(filterName)
+              && filterRare === rare) {
+              return (
+                <li key={ `${name}-${index}` }>
+                  <Card
+                    key={ name }
+                    cardName={ name }
+                    cardDescription={ description }
+                    cardAttr1={ attr1 }
+                    cardAttr2={ attr2 }
+                    cardAttr3={ attr3 }
+                    cardImage={ image }
+                    cardRare={ rare }
+                    cardTrunfo={ trunfo }
+                  />
+                  <button
+                    name={ index }
+                    data-testid="delete-button"
+                    type="button"
+                    onClick={ deleteCard }
+                  >
+                    Excluir
+                  </button>
+                </li>
+              );
+            }
+
+            return ('');
           }) }
         </ul>
       </div>
@@ -99,6 +154,7 @@ CardList.propTypes = {
   })).isRequired,
   deleteCard: PropTypes.func.isRequired,
   filterName: PropTypes.string.isRequired,
+  filterRare: PropTypes.string.isRequired,
 };
 
 export default CardList;

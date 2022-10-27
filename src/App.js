@@ -21,6 +21,7 @@ class App extends React.Component {
       isSaveButtonDisabled: true,
       cardsCreated: [],
       filterName: '',
+      filterRare: 'todas',
     };
 
     this.onInputChange = this.onInputChange.bind(this);
@@ -140,6 +141,7 @@ class App extends React.Component {
       isSaveButtonDisabled,
       cardsCreated,
       filterName,
+      filterRare,
     } = this.state;
     return (
       <div>
@@ -175,6 +177,7 @@ class App extends React.Component {
 
           <Filters
             filterName={ filterName }
+            filterRare={ filterRare }
             onInputChange={ this.onInputChange }
           />
 
@@ -182,6 +185,7 @@ class App extends React.Component {
             cardsCreated={ cardsCreated }
             deleteCard={ this.deleteCard }
             filterName={ filterName }
+            filterRare={ filterRare }
           />
         </div>
       </div>
