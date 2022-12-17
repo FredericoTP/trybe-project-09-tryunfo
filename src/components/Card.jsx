@@ -1,5 +1,7 @@
+/* eslint-disable max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../style/Card.css';
 
 class Card extends React.Component {
   render() {
@@ -15,17 +17,37 @@ class Card extends React.Component {
     } = this.props;
 
     return (
-      <div>
-        <p data-testid="name-card">{ cardName }</p>
-        <img src={ cardImage } alt={ cardName } data-testid="image-card" />
-        <p data-testid="description-card">{ cardDescription }</p>
-        <p data-testid="attr1-card">{ cardAttr1 }</p>
-        <p data-testid="attr2-card">{ cardAttr2 }</p>
-        <p data-testid="attr3-card">{ cardAttr3 }</p>
-        <p data-testid="rare-card">{ cardRare }</p>
-        {
-          cardTrunfo ? <p data-testid="trunfo-card">Super Trunfo</p> : null
-        }
+      <div className="game-card">
+        <div className="name-card">
+          <p className="card-name-p" data-testid="name-card">{ cardName }</p>
+        </div>
+        <div className="image-card">
+          <img src={ cardImage } alt={ cardName } data-testid="image-card" />
+        </div>
+        <div className="description-card">
+          <p data-testid="description-card">{ cardDescription }</p>
+        </div>
+        <div className="attr">
+          <div>
+            <p className="attr-name">Distância * 1000al </p>
+            <p data-testid="attr1-card" className="attr-number">{ cardAttr1 }</p>
+          </div>
+          <div>
+            <p className="attr-name">Tamanho - al </p>
+            <p data-testid="attr2-card" className="attr-number">{ cardAttr2 }</p>
+          </div>
+          <div>
+            <p className="attr-name">Magnitude Aparente</p>
+            <p data-testid="attr3-card" className="attr-number">{ cardAttr3 }</p>
+          </div>
+        </div>
+        <div className="rarity">
+          <div className="trunfo">
+            {
+              cardTrunfo ? <p data-testid="trunfo-card">Super Trunfo</p> : <p data-testid="rare-card" className="rare">{ cardRare }</p>
+            }
+          </div>
+        </div>
       </div>
     );
   }

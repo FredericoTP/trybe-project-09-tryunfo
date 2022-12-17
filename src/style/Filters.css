@@ -1,0 +1,32 @@
+.filters {
+  align-items: center;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  width: 100%;
+}
+
+.text-input {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.label-select {
+  padding: 0 10px 0 0;
+}
+
+.select-input {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 5px 10px;
+}
+
+.label-check {
+  padding: 0 0 0 10px;
+}

@@ -1,0 +1,99 @@
+.fieldset {
+  background: rgba(255, 255, 255, 0.5);
+  border: 5px solid black;
+  border-radius: 9px;
+  box-shadow: 0 3px 13px rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  width: 40%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.input-text {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px #999;
+  box-sizing: border-box;
+  display: inline-block;
+  margin: 8px 0;
+  padding: 12px 20px;
+  width: 100%;
+}
+
+.form-textarea {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px #999;
+  line-height: 1.5;
+  margin: 8px 0;
+  max-width: 100%;
+  padding: 12px 20px;
+}
+
+.attributes {
+  display: flex;
+  justify-content: space-between;
+}
+
+.field textarea {
+  resize: none;
+}
+
+.input-select {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px #999;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 8px 0;
+  padding: 5px 10px;
+}
+
+.field-check {
+  display: flex;
+  margin: 8px 0;
+}
+
+.form-check-input {
+  margin: 0 10px 0 0;
+}
+
+.btn {
+  background-color: black;
+  border: 1px solid #515152;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px #999;
+  color: white;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.btn:hover {
+  background-color: #3b3b3b;
+  border: 1px solid black;
+  box-shadow: 1px 1px 1px #999;
+  color: white;
+  padding: 5px 10px;
+}
+
+.btn:disabled, .btn[ disabled ] {
+  background-color: grey;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px #999;
+  color: #515152;
+}

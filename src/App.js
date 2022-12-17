@@ -3,6 +3,7 @@ import Form from './components/Form';
 import Card from './components/Card';
 import Filters from './components/Filters';
 import CardList from './components/CardList';
+import './style/App.css';
 
 class App extends React.Component {
   constructor() {
@@ -153,35 +154,39 @@ class App extends React.Component {
       isFilterRareDisabled,
     } = this.state;
     return (
-      <div>
-        <h1>Tryunfo</h1>
+      <div className="main-content">
+        <header>
+          <h1>SpaceTryunfo</h1>
+        </header>
+        <div className="form-preview">
+          <Form
+            cardName={ cardName }
+            cardDescription={ cardDescription }
+            cardAttr1={ cardAttr1 }
+            cardAttr2={ cardAttr2 }
+            cardAttr3={ cardAttr3 }
+            cardImage={ cardImage }
+            cardRare={ cardRare }
+            cardTrunfo={ cardTrunfo }
+            hasTrunfo={ hasTrunfo }
+            isSaveButtonDisabled={ isSaveButtonDisabled }
+            onInputChange={ this.onInputChange }
+            onSaveButtonClick={ this.onSaveButtonClick }
+          />
 
-        <Form
-          cardName={ cardName }
-          cardDescription={ cardDescription }
-          cardAttr1={ cardAttr1 }
-          cardAttr2={ cardAttr2 }
-          cardAttr3={ cardAttr3 }
-          cardImage={ cardImage }
-          cardRare={ cardRare }
-          cardTrunfo={ cardTrunfo }
-          hasTrunfo={ hasTrunfo }
-          isSaveButtonDisabled={ isSaveButtonDisabled }
-          onInputChange={ this.onInputChange }
-          onSaveButtonClick={ this.onSaveButtonClick }
-        />
+          <Card
+            cardName={ cardName }
+            cardDescription={ cardDescription }
+            cardAttr1={ cardAttr1 }
+            cardAttr2={ cardAttr2 }
+            cardAttr3={ cardAttr3 }
+            cardImage={ cardImage }
+            cardRare={ cardRare }
+            cardTrunfo={ cardTrunfo }
+          />
+        </div>
 
-        <Card
-          cardName={ cardName }
-          cardDescription={ cardDescription }
-          cardAttr1={ cardAttr1 }
-          cardAttr2={ cardAttr2 }
-          cardAttr3={ cardAttr3 }
-          cardImage={ cardImage }
-          cardRare={ cardRare }
-          cardTrunfo={ cardTrunfo }
-        />
-        <div>
+        <div className="filters-list-card">
           <h2>TODAS AS CARTAS</h2>
 
           <Filters
@@ -192,14 +197,15 @@ class App extends React.Component {
             isFilterRareDisabled={ isFilterRareDisabled }
             onInputChange={ this.onInputChange }
           />
-
-          <CardList
-            cardsCreated={ cardsCreated }
-            deleteCard={ this.deleteCard }
-            filterName={ filterName }
-            filterRare={ filterRare }
-            filterTrunfo={ filterTrunfo }
-          />
+          <div className="list-cards">
+            <CardList
+              cardsCreated={ cardsCreated }
+              deleteCard={ this.deleteCard }
+              filterName={ filterName }
+              filterRare={ filterRare }
+              filterTrunfo={ filterTrunfo }
+            />
+          </div>
         </div>
       </div>
     );
