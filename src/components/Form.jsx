@@ -1,5 +1,8 @@
+/* eslint-disable operator-linebreak */
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../style/Form.css';
 
 class Form extends React.Component {
   render() {
@@ -19,122 +22,153 @@ class Form extends React.Component {
     } = this.props;
 
     return (
-      <form>
-        <label htmlFor="name-input">
-          Nome
-          <input
-            name="cardName"
-            id="name-input"
-            type="text"
-            data-testid="name-input"
-            value={ cardName }
-            onChange={ onInputChange }
-          />
-        </label>
+      <fieldset className="fieldset">
+        <form className="form">
+          <div className="field">
+            <label htmlFor="name-input" className="form-label">
+              Nome
+            </label>
+            <input
+              name="cardName"
+              id="name-input"
+              type="text"
+              data-testid="name-input"
+              value={ cardName }
+              onChange={ onInputChange }
+              className="input-text"
+            />
+          </div>
 
-        <label htmlFor="description-input">
-          Descrição
-          <textarea
-            name="cardDescription"
-            id="description-input"
-            data-testid="description-input"
-            cols="30"
-            rows="10"
-            value={ cardDescription }
-            onChange={ onInputChange }
-          />
-        </label>
+          <div className="field">
+            <label htmlFor="description-input" className="form-label">
+              Descrição
+            </label>
+            <textarea
+              name="cardDescription"
+              id="description-input"
+              data-testid="description-input"
+              rows="5"
+              value={ cardDescription }
+              onChange={ onInputChange }
+              className="form-textarea"
+            />
+          </div>
 
-        <label htmlFor="attr1-input">
-          Attr01
-          <input
-            name="cardAttr1"
-            id="attr1-input"
-            type="number"
-            data-testid="attr1-input"
-            value={ cardAttr1 }
-            onChange={ onInputChange }
-            min="0"
-            max="90"
-          />
-        </label>
+          <div className="attributes">
+            <div className="field">
+              <label htmlFor="attr1-input" className="form-label">
+                Distância - anos-luz
+              </label>
+              <input
+                name="cardAttr1"
+                id="attr1-input"
+                type="number"
+                data-testid="attr1-input"
+                value={ cardAttr1 }
+                onChange={ onInputChange }
+                min="0"
+                max="90"
+                className="input-text"
+              />
+            </div>
 
-        <label htmlFor="attr2-input">
-          Attr02
-          <input
-            name="cardAttr2"
-            id="attr2-input"
-            type="number"
-            data-testid="attr2-input"
-            value={ cardAttr2 }
-            onChange={ onInputChange }
-            min="0"
-            max="90"
-          />
-        </label>
+            <div className="field">
+              <label htmlFor="attr2-input" className="form-label">
+                Tamanho - anos-luz
+              </label>
+              <input
+                name="cardAttr2"
+                id="attr2-input"
+                type="number"
+                data-testid="attr2-input"
+                value={ cardAttr2 }
+                onChange={ onInputChange }
+                min="0"
+                max="90"
+                className="input-text"
+              />
+            </div>
 
-        <label htmlFor="attr3-input">
-          Attr03
-          <input
-            name="cardAttr3"
-            id="attr3-input"
-            type="number"
-            data-testid="attr3-input"
-            value={ cardAttr3 }
-            onChange={ onInputChange }
-            min="0"
-            max="90"
-          />
-        </label>
+            <div className="field">
+              <label htmlFor="attr3-input" className="form-label">
+                Magnitude Aparente
+              </label>
+              <input
+                name="cardAttr3"
+                id="attr3-input"
+                type="number"
+                data-testid="attr3-input"
+                value={ cardAttr3 }
+                onChange={ onInputChange }
+                min="0"
+                max="90"
+                className="input-text"
+              />
+            </div>
+          </div>
 
-        <label htmlFor="image-input">
-          Imagem
-          <input
-            name="cardImage"
-            id="image-input"
-            type="text"
-            data-testid="image-input"
-            value={ cardImage }
-            onChange={ onInputChange }
-          />
-        </label>
+          <div className="field">
+            <label htmlFor="image-input" className="form-label">
+              Imagem
+            </label>
+            <input
+              name="cardImage"
+              id="image-input"
+              type="text"
+              data-testid="image-input"
+              value={ cardImage }
+              onChange={ onInputChange }
+              className="input-text"
+            />
+          </div>
 
-        <label htmlFor="rare-input">
-          Raridade
-          <select
-            name="cardRare"
-            id="rare-input"
-            data-testid="rare-input"
-            value={ cardRare }
-            onChange={ onInputChange }
+          <div className="field">
+            <label htmlFor="rare-input" className="form-label">
+              Raridade
+            </label>
+            <select
+              name="cardRare"
+              id="rare-input"
+              data-testid="rare-input"
+              value={ cardRare }
+              onChange={ onInputChange }
+              className="input-select"
+            >
+              <option value="normal">normal</option>
+              <option value="raro">raro</option>
+              <option value="muito raro">muito raro</option>
+            </select>
+          </div>
+
+          <div className="field-check">
+            { hasTrunfo
+              ? <p className="form-label">Você já tem um Super Trunfo em seu baralho</p>
+              :
+              <label className="form-label">
+                <input
+                  name="cardTrunfo"
+                  id="trunfo-input"
+                  type="checkbox"
+                  data-testid="trunfo-input"
+                  checked={ cardTrunfo }
+                  onChange={ onInputChange }
+                  className="form-check-input"
+                />
+                Super Trunfo
+              </label> }
+          </div>
+
+          <button
+            type="submit"
+            data-testid="save-button"
+            disabled={ isSaveButtonDisabled }
+            onClick={ onSaveButtonClick }
+            className="btn"
           >
-            <option value="normal">normal</option>
-            <option value="raro">raro</option>
-            <option value="muito raro">muito raro</option>
-          </select>
-        </label>
-
-        <label htmlFor="trunfo-input">
-          Super Trunfo
-          { hasTrunfo ? <p>Você já tem um Super Trunfo em seu baralho</p> : <input
-            name="cardTrunfo"
-            id="trunfo-input"
-            type="checkbox"
-            data-testid="trunfo-input"
-            checked={ cardTrunfo }
-            onChange={ onInputChange }
-          /> }
-        </label>
-
-        <button
-          type="submit"
-          data-testid="save-button"
-          disabled={ isSaveButtonDisabled }
-          onClick={ onSaveButtonClick }
-        >
-          Salvar
-        </button>
-      </form>
+            Salvar
+          </button>
+        </form>
+      </fieldset>
     );
   }
 }

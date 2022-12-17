@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Card from './Card';
+import '../style/CardList.css';
 
 class CardList extends React.Component {
   render() {
@@ -12,8 +13,8 @@ class CardList extends React.Component {
       filterTrunfo,
     } = this.props;
     return (
-      <div>
-        <ul>
+      <div className="container-list">
+        <ul className="list">
           { cardsCreated.map((card, index) => {
             const {
               cardName: name,
@@ -28,7 +29,7 @@ class CardList extends React.Component {
 
             if (filterTrunfo && trunfo) {
               return (
-                <li key={ `${name}-${index}` }>
+                <li key={ `${name}-${index}` } className="item-list">
                   <Card
                     key={ name }
                     cardName={ name }
@@ -45,6 +46,7 @@ class CardList extends React.Component {
                     data-testid="delete-button"
                     type="button"
                     onClick={ deleteCard }
+                    className="btn-delete"
                   >
                     Excluir
                   </button>
@@ -54,7 +56,7 @@ class CardList extends React.Component {
 
             if (filterName === '' && filterRare === 'todas' && !filterTrunfo) {
               return (
-                <li key={ `${name}-${index}` }>
+                <li key={ `${name}-${index}` } className="item-list">
                   <Card
                     key={ name }
                     cardName={ name }
@@ -71,6 +73,7 @@ class CardList extends React.Component {
                     data-testid="delete-button"
                     type="button"
                     onClick={ deleteCard }
+                    className="btn-delete"
                   >
                     Excluir
                   </button>
@@ -80,7 +83,7 @@ class CardList extends React.Component {
 
             if (filterName === '' && rare === filterRare && !filterTrunfo) {
               return (
-                <li key={ `${name}-${index}` }>
+                <li key={ `${name}-${index}` } className="item-list">
                   <Card
                     key={ name }
                     cardName={ name }
@@ -97,6 +100,7 @@ class CardList extends React.Component {
                     data-testid="delete-button"
                     type="button"
                     onClick={ deleteCard }
+                    className="btn-delete"
                   >
                     Excluir
                   </button>
@@ -108,7 +112,7 @@ class CardList extends React.Component {
               && name.includes(filterName)
               && filterRare === 'todas') {
               return (
-                <li key={ `${name}-${index}` }>
+                <li key={ `${name}-${index}` } className="item-list">
                   <Card
                     key={ name }
                     cardName={ name }
@@ -125,6 +129,7 @@ class CardList extends React.Component {
                     data-testid="delete-button"
                     type="button"
                     onClick={ deleteCard }
+                    className="btn-delete"
                   >
                     Excluir
                   </button>
@@ -136,7 +141,7 @@ class CardList extends React.Component {
               && name.includes(filterName)
               && filterRare === rare) {
               return (
-                <li key={ `${name}-${index}` }>
+                <li key={ `${name}-${index}` } className="item-list">
                   <Card
                     key={ name }
                     cardName={ name }
@@ -153,6 +158,7 @@ class CardList extends React.Component {
                     data-testid="delete-button"
                     type="button"
                     onClick={ deleteCard }
+                    className="btn-delete"
                   >
                     Excluir
                   </button>

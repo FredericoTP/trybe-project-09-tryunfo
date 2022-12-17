@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+}
+
+.game-card {
+  background-color: black;
+  border: 5px solid white;
+  border-radius: 9px;
+  box-shadow: 0 3px 13px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  height: 580px;
+  width: 350px;
+}
+
+.name-card {
+  margin: 0 9px;
+}
+
+.card-name-p {
+  background-color: rgb(3, 34, 75);
+  border-radius: 9px 9px 0 0;
+  color: white;
+  font-size: 27px;
+  font-weight: 700;
+  line-height: 28px;
+  margin: 10px 0 0;
+  padding: 5px 0;
+  text-align: center;
+}
+
+.image-card {
+  background-color: rgb(3, 34, 75);
+  border-left: 9px solid black;
+  border-right: 9px solid black;
+  height: 332px;
+  width: 332px;
+}
+
+.image-card img {
+  height: 332px;
+  object-fit: cover;
+  width: 332px;
+}
+
+.description-card {
+  background-color: rgb(3, 34, 75);
+  border-left: 9px solid black;
+  border-right: 9px solid black;
+  height: 35px;
+  text-align: center;
+  width: 332px;
+}
+
+.description-card p {
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  margin: 0;
+  max-height: 35px;
+  word-wrap: break-word;
+}
+
+.attr {
+  background-color: white;
+  border-left: 9px solid black;
+  border-right: 9px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+.attr div {
+  border: 1px solid rgb(3, 34, 75);
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.trunfo p {
+  margin: 0;
+  width: 100%;
+}
+
+.attr div p {
+  height: 20px;
+  margin: 0;
+  padding: 5px;
+}
+
+.attr-name {
+  font-weight: 700;
+}
+
+.attr-number {
+  background-color: rgb(3, 34, 75);
+  border: 1px solid white;
+  color: white;
+  font-weight: 700;
+  width: 20%;
+}
+
+.rarity {
+  align-items: center;
+  border-left: 9px solid black;
+  border-radius: 0 0 9px 9px;
+  border-right: 9px solid black;
+  display: flex;
+  height: 79px;
+  justify-content: space-around;
+  text-transform: uppercase;
+  width: 332px;
+}
+
+.rare {
+  margin: 0;
+  padding: 0 10px;
+}
+
+.trunfo {
+  background-color: white;
+  border-radius: 15px 50px;
+  display: flex;
+  font-weight: 700;
+  padding: 10px;
+}
