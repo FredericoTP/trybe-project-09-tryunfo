@@ -123,3 +123,72 @@
   font-weight: 700;
   padding: 10px;
 }
+
+@media screen and ( max-width : 400px ) {
+
+  .game-card {
+    height: 348px;
+    width: 210px;
+  }
+
+  .card-name-p {
+    font-size: 16.2px;
+    line-height: 16.8px;
+    margin: 6px 0 0;
+    word-wrap: break-word;
+  }
+
+  .image-card {
+    height: 192px;
+    width: 192px;
+  }
+
+  .image-card img {
+    height: 192px;
+    object-fit: cover;
+    width: 192px;
+  }
+
+  .description-card {
+    height: 21px;
+    width: 192px;
+  }
+
+  .description-card p {
+    font-size: 5px;
+    max-height: 35px;
+    word-wrap: break-word;
+  }
+
+  .attr div p {
+    height: 7.2px;
+    margin: 0;
+    padding: 4px;
+  }
+
+  .attr-name {
+    font-size: 10px;
+    font-weight: 700;
+  }
+
+  .attr-number {
+    font-size: 10px;
+    font-weight: 700;
+    width: 20%;
+  }
+
+  .rarity {
+    height: 47.4px;
+    width: 189.2px;
+  }
+
+  .rare {
+    margin: 0;
+    padding: 0 10px;
+  }
+
+  .trunfo {
+    font-size: 10px;
+    padding: 6px;
+  }
+}
