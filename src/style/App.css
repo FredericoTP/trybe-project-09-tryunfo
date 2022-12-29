@@ -1,5 +1,6 @@
 body {
   background-color: rgb(71, 71, 71);
+  width: 100%;
 }
 
 .main-content {
@@ -38,11 +39,19 @@ header {
 .filters-list-card h2 {
   background-color: black;
   color: white;
-  padding: 15px;
+  padding: 15px 0;
   text-align: center;
   width: 100%;
 }
 
 .list-cards {
   display: flex;
+}
+
+@media screen and ( max-width : 800px ) {
+
+  .form-preview {
+    display: flex;
+    flex-direction: column;
+  }
 }

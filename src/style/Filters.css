@@ -4,7 +4,7 @@
   color: white;
   display: flex;
   justify-content: space-around;
-  padding: 10px;
+  padding: 10px 0;
   width: 100%;
 }
 
@@ -29,4 +29,17 @@
 
 .label-check {
   padding: 0 0 0 10px;
+}
+
+@media screen and ( max-width : 800px ) {
+
+  .filters {
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .filters h3, .filters input, .filters div {
+    margin: 5px 0;
+  }
 }
