@@ -276,6 +276,8 @@ Você já tem várias cartas legais em seu baralho, agora é a hora de listá-la
 
 ## 100% :heavy_check_mark:
 
+![Project-Tryunfo-Grade](https://github.com/FredericoTP/trybe-project-09-tryunfo/blob/main/images/tryunfo-grade.png?raw=true)
+
 <br />
 
 ## 3- Preview
