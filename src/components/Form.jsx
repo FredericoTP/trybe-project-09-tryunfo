@@ -29,6 +29,7 @@ class Form extends React.Component {
               Nome
             </label>
             <input
+              maxLength="15"
               name="cardName"
               id="name-input"
               type="text"
