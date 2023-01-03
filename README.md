@@ -1,10 +1,8 @@
-# :construction: README em construção ! :construction:
-
 # :computer: Trybe-09-Project-Tryunfo :computer:
 
 Nesse projeto foi desenvolvido um editor de arte com pixels. A pessoa usuária pode escolher uma cor em uma paleta de cores e pode pintar o que quiser em um quadro branco.
 
-# Acesse o projeto clicando [aqui]()! :green_heart:
+# Acesse o projeto clicando [aqui](http://fredericotp.github.io/trybe-project-09-tryunfo)! :green_heart:
 
 <br />
 
@@ -281,3 +279,6 @@ Você já tem várias cartas legais em seu baralho, agora é a hora de listá-la
 <br />
 
 ## 3- Preview
+
+![Project-Tryunfo-Preview](https://github.com/FredericoTP/trybe-project-09-tryunfo/blob/main/images/tryunfo-preview.png?raw=true)
+  
