@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/trybe-project-09-tryunfo/static/css/main.dc60db37.css",
+    "main.js": "/trybe-project-09-tryunfo/static/js/main.1fe1541f.js",
+    "static/media/nebulosa.png": "/trybe-project-09-tryunfo/static/media/nebulosa.90f4ad24b389c3c3e048.png",
+    "index.html": "/trybe-project-09-tryunfo/index.html",
+    "main.dc60db37.css.map": "/trybe-project-09-tryunfo/static/css/main.dc60db37.css.map",
+    "main.1fe1541f.js.map": "/trybe-project-09-tryunfo/static/js/main.1fe1541f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dc60db37.css",
+    "static/js/main.1fe1541f.js"
+  ]
+}
