@@ -1,6 +1,6 @@
 # :computer: Trybe-09-Project-Tryunfo :computer:
 
-Nesse projeto foi desenvolvido um editor de arte com pixels. A pessoa usuária pode escolher uma cor em uma paleta de cores e pode pintar o que quiser em um quadro branco.
+Nesse projeto foi desenvolvido um jogo no estilo Super Trunfo. A pessoa usuária pode criar um baralho no tema astronomia, adicionar e remover uma carta do baralho e visualizar todas as cartas que foram adicionadas ao baralho.
 
 # Acesse o projeto clicando [aqui](http://fredericotp.github.io/trybe-project-09-tryunfo)! :green_heart:
 
